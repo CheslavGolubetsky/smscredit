@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class CustomerDAOImpl implements CustomerDAO {
+class CustomerDAOImpl implements CustomerDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerDAOImpl.class);
 
     @Autowired

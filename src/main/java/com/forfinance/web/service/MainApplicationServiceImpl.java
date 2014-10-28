@@ -26,7 +26,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 @Service
-public class MainApplicationServiceImpl implements MainApplicationService {
+class MainApplicationServiceImpl implements MainApplicationService {
     public static final BigDecimal MAX_POSSIBLE_AMOUNT = new BigDecimal("500.00");
 
     @Autowired

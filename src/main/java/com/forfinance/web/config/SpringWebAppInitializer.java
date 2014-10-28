@@ -3,11 +3,12 @@ package com.forfinance.web.config;
 import com.forfinance.config.ApplicationConfig;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.*;
-import java.util.EnumSet;
+import javax.servlet.Filter;
+import javax.servlet.FilterRegistration;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 
 @SuppressWarnings("unused")
 public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -15,9 +16,6 @@ public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherS
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext);
-
-        FilterRegistration.Dynamic ehfReg = servletContext.addFilter("errorHandlerFilter", new DelegatingFilterProxy("errorHandlerFilter"));
-        ehfReg.addMappingForUrlPatterns(EnumSet.of(DispatcherType.ERROR), false, "/*");
 
         FilterRegistration charEncodingFilterReg = servletContext.addFilter("CharacterEncodingFilter", CharacterEncodingFilter.class);
         charEncodingFilterReg.setInitParameter("encoding", "UTF-8");

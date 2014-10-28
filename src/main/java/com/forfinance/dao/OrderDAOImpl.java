@@ -14,7 +14,7 @@ import java.util.Calendar;
 import java.util.List;
 
 @Service
-public class OrderDAOImpl implements OrderDAO {
+class OrderDAOImpl implements OrderDAO {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderDAOImpl.class);
 
     @Autowired

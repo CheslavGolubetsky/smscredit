@@ -10,11 +10,4 @@
         <welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
     </welcome-file-list>
 
-    <error-page>
-        <location>/WEB-INF/jsp/servletException.jsp</location>
-    </error-page>
-    <error-page>
-        <exception-type>java.lang.Exception</exception-type>
-        <location>/WEB-INF/jsp/servletException.jsp</location>
-    </error-page>
 </web-app>

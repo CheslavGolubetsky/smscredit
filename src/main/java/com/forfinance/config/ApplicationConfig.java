@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.forfinance.dozer.SpringBeanMappingBuilder;
-import com.forfinance.exception.ErrorHandlerFilter;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.dozer.DozerBeanMapper;
@@ -30,8 +29,6 @@ import java.util.Locale;
 @Configuration
 @ComponentScan(basePackages = {"com.forfinance"})
 @PropertySource(value = {"classpath:application.properties"})
-//@EnableScheduling
-//@EnableAspectJAutoProxy
 @EnableWebMvc
 @SuppressWarnings("unused")
 public class ApplicationConfig {
@@ -39,11 +36,6 @@ public class ApplicationConfig {
     @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfig() {
         return new PropertySourcesPlaceholderConfigurer();
-    }
-
-    @Bean
-    public static ErrorHandlerFilter errorHandlerFilter() {
-        return new ErrorHandlerFilter();
     }
 
     @Bean(name = "messageSource")

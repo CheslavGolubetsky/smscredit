@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.List;
 
 @Service
-public class PersistenceServiceImpl implements PersistenceService {
+class PersistenceServiceImpl implements PersistenceService {
 
     @Autowired
     private CustomerDAO customerDAO;
